@@ -1,0 +1,62 @@
+body {
+    /* high contrast */
+    background: var(--bg-color);
+    color: var(--font-color);
+    /* most readable wed-safe font */
+    font-family: Helvetica;
+    /* 12pt is minimum */
+    font-size: 12pt;
+    /* required with justified text */
+    hyphens: auto;
+    /* experimental:
+    highest quality images */
+    image-rendering: high-quality;
+    /* 1.5 is minimum */
+    line-height: 1.6;
+    /* center body in page */
+    margin: auto;
+    /* space inside body */
+    padding: 0 1em;
+    /* each line is similar length */
+    text-align: justify;
+    /* browser focuses on readability */
+    text-rendering: optimizeLegibility;
+    /* line length of 60 characters
+    (between recommended 45-80)
+    & subtract the padding */
+    width: min(60ch, calc(100% - 2em));
+}
+
+
+footer,
+header {
+    margin-top: 1em;
+    text-align: center;
+}
+
+html {
+    /* better for jump scrolling */
+    scroll-behavior: smooth;
+}
+
+iframe {
+    /* common screen ratio */
+    aspect-ratio: 3/2;
+    /* keep from overflowing */
+    width: 99%;
+}
+
+
+table {
+    /* multiple borders merge */
+    border-collapse: collapse;
+    display: block;
+}
+
+td,
+th {
+    /* width: 10em; */
+    border: 0px solid;
+    padding-right: 1em;
+    /* border-collapse: collapse; */
+}
