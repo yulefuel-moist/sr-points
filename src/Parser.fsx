@@ -358,11 +358,11 @@ module HtmlRenderer =
                         const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
                     """ ]
                     script [ _type "application/javascript"; _src "https://wow.zamimg.com/js/tooltips.js" ] []
-                    style [] [ str "border:1px solid black" ]
+                    (tag "link") [ attr "rel" "stylesheet"; attr "href" "../style.css" ] []
                     title [] [ str (sprintf "%s Points" instanceName) ] ]
               body
                   []
-                  [ h1 [] [ str "AQ40 Soft-reserve points" ]
+                  [ h1 [] [ str (sprintf "%s Soft-reserve points" instanceName) ]
                     p [] [ str (sprintf "Updated %s" (System.DateTime.Now.ToString())) ]
                     table
                         []
