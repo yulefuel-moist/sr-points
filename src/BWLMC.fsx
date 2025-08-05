@@ -7,7 +7,7 @@ let path_res = __SOURCE_DIRECTORY__ + @"/../res/bwl+mc/"
 let path_html = __SOURCE_DIRECTORY__ + @"/../pages/BWL+MC-points.html"
 let files = Directory.GetFiles(path_res)
 
-let itemsAQ40 =
+let itemsBWLMC =
     { entries = SrPointSystem.itemsFromFile (files |> Array.find (fun s -> Path.GetFileName(s) = "bwl+mc-items.csv")) }
 
 let softReserves =
@@ -24,7 +24,7 @@ let lootHistory =
     |> Array.map (Gargul.loadFromFile)
     |> Array.concat
 
-let pointsOnItems = SrPointSystem.computePoints itemsAQ40 softReserves lootHistory
+let pointsOnItems = SrPointSystem.computePoints itemsBWLMC 10 softReserves lootHistory
 
 
 HtmlRenderer.generateView "BWL+MC" pointsOnItems

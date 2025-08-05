@@ -302,6 +302,7 @@ module SrPointSystem =
 
     let computePoints
         (itemsDb: SimpleDb<ItemInPointSystem>)
+        (pointsPerSR: int)
         (softReserves: array<SrEntry>)
         (lootHistory: array<ItemId * RaiderName * System.DateTime>)
         =
@@ -317,7 +318,7 @@ module SrPointSystem =
                     srEntries
                     |> Array.map (fun srEntry -> srEntry.raiderName)
                     |> Array.countBy id
-                    |> Array.map (fun (raider, count) -> (raider, count * 10))
+                    |> Array.map (fun (raider, count) -> (raider, count * pointsPerSR))
 
                 { itemId = itemId
                   points = pointsOnItem })

@@ -22,7 +22,7 @@ let lootHistory =
     |> Array.map (Gargul.loadFromFile)
     |> Array.concat
 
-let pointsOnItems = SrPointSystem.computePoints itemsAQ40 softReserves lootHistory
+let pointsOnItems = SrPointSystem.computePoints itemsAQ40 10 softReserves lootHistory
 
 
 HtmlRenderer.generateView "AQ40" pointsOnItems
