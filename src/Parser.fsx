@@ -383,6 +383,7 @@ module HtmlRenderer =
                                         []
                                         [ yield!
                                               pointsOnItem.points
+                                              |> Array.sortBy (fun (name, points) -> -points)
                                               |> Array.map (fun (name, points) ->
                                                   tr [] [ td [] [ str name ]; td [] [ str (points |> string) ] ]) ] ] ] ] ]
 
