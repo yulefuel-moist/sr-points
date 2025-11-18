@@ -1,0 +1,2 @@
+dateTime,character,itemID,offspec,id
+2025-10-22,Birkler,23068,0,42170535251771594900
